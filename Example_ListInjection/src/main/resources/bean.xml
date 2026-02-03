@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="emp" class="com.mainapp.Employee">
+		<property name="eid" value="1"></property>
+		<property name="ename" value="shivtej"></property>
+
+		<property name="listOfBooks" ref="myList">
+		</property>
+	</bean>
+
+	<bean id="myList" class="java.util.LinkedList">
+		<constructor-arg>
+			<list>
+				<value>Book1</value>
+				<value>Book2</value>
+				<value>Book3</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
