@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	default-autowire = "byName"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="account" class="com.mainapp.Account">
+		<property name="an" value="1000" />
+		<property name="bankName" value="bsi" />
+	</bean>
+
+	<bean id="account2" class="com.mainapp.Account" primary="true">
+		<property name="an" value="2000" />
+		<property name="bankName" value="BOI" />
+	</bean>
+
+	<bean id="car" class="com.mainapp.Car">
+		<property name="cn" value="9008" />
+		<property name="carName" value="alto" />
+	</bean>
+
+	<util:list id="listOfBooks">
+		<value>JAVA</value>
+		<value>JAVASCRIPT</value>
+	</util:list>
+
+
+	<bean id="employee1" class="com.mainapp.Employee">
+		<property name="eid" value="1"></property>
+	</bean>
+
+	<bean id="employee2" class="com.mainapp.Employee">
+		<property name="eid" value="2"></property>
+	</bean>
+</beans>
