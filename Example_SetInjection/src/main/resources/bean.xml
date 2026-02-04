@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="acc1" class="com.mainapp.Account">
+		<property name="an" value="1" />
+		<property name="bankName" value="SBI" />
+	</bean>
+
+	<bean id="acc2" class="com.mainapp.Account">
+		<property name="an" value="2" />
+		<property name="bankName" value="RBI" />
+	</bean>
+
+	<bean id="acc3" class="com.mainapp.Account">
+		<property name="an" value="3" />
+		<property name="bankName" value="BOI" />
+	</bean>
+
+	<bean id="emp" class="com.mainapp.Employee">
+		<property name="eid" value="1" />
+		<property name="ename" value="vishal" />
+		<property name="setOfBooks" ref="mySet" />
+	</bean>
+
+	<bean id="mySet" class = "java.util.TreeSet">
+		<constructor-arg>
+			<set>
+				<ref bean="acc1" />
+				<ref bean="acc2" />
+				<ref bean="acc3" />
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<!-- <util:set id="mySet" set-class="java.util.TreeSet"> 
+	<ref bean="acc1"/> 
+		<ref bean="acc2"/> 
+		<ref bean="acc3"/> 
+	</util:set> -->
+
+</beans>
